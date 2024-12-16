@@ -145,7 +145,7 @@ jobs:
           cache-on-failure: true
           workspaces: ${{env.GRADLE_DIR}}/ALVR/
       
-      - uses: gradle/gradle-build-action@v3
+      - uses: gradle/actions/setup-gradle@v4
         if: ${{ github.event.pull_request.head.repo.full_name != '${{ env.ORG_FULL }}' }} # Only run if not on master repo
         with:
           build-root-directory: ${{env.GRADLE_DIR}}
@@ -332,7 +332,7 @@ jobs:
           cache-on-failure: true
           workspaces: ${{env.GRADLE_DIR}}/ALVR/
       
-      - uses: gradle/gradle-build-action@v3
+      - uses: gradle/actions/setup-gradle@v4
         if: ${{ github.event.pull_request.head.repo.full_name != '${{ env.ORG_FULL }}' }} # Only run if not on master repo
         with:
           build-root-directory: ${{env.GRADLE_DIR}}
